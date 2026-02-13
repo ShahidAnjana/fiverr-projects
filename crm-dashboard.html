@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 11 - CRM Dashboard</title>
+<style>
+  body { margin:0; font-family:'Verdana', sans-serif; background:#fdf6e3; color:#333; }
+  header { background:#2e7d32; color:#fff; text-align:center; padding:25px; font-size:1.5rem; }
+  nav { background:#43a047; display:flex; justify-content:space-around; padding:15px 0; }
+  nav a { color:#fff; text-decoration:none; font-weight:bold; }
+  nav a:hover { color:#ffeb3b; }
+
+  .crm-overview { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:40px 20px; }
+  .crm-card { background:#fff; border-radius:15px; width:240px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.1); transition:0.3s; text-align:center; }
+  .crm-card:hover { transform:translateY(-5px); box-shadow:0 10px 22px rgba(0,0,0,0.12); }
+  .crm-card h3 { color:#2e7d32; margin-bottom:10px; }
+  .crm-card p { color:#555; font-size:0.95rem; }
+
+  .table-container { overflow-x:auto; margin:40px 20px; }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.05); }
+  th, td { padding:14px 20px; text-align:left; }
+  th { background:#2e7d32; color:#fff; }
+  tr:nth-child(odd){ background:#e8f5e9; }
+  tr:nth-child(even){ background:#c8e6c9; }
+
+  footer { text-align:center; padding:25px 20px; background:#2e7d32; color:#fff; margin-top:40px; }
+</style>
+</head>
+<body>
+
+<header>CRM Dashboard</header>
+<nav>
+  <a href="#">Leads</a>
+  <a href="#">Contacts</a>
+  <a href="#">Deals</a>
+  <a href="#">Reports</a>
+</nav>
+
+<section class="crm-overview">
+  <div class="crm-card"><h3>Leads</h3><p>1,230 New Leads</p></div>
+  <div class="crm-card"><h3>Deals</h3><p>87 Active Deals</p></div>
+  <div class="crm-card"><h3>Revenue</h3><p>$28,450 This Month</p></div>
+  <div class="crm-card"><h3>Contacts</h3><p>5,460 Contacts</p></div>
+</section>
+
+<section class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Client Name</th>
+        <th>Deal Status</th>
+        <th>Value</th>
+        <th>Follow Up</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Acme Corp</td><td>Negotiation</td><td>$4,500</td><td>2026-02-15</td></tr>
+      <tr><td>Global Tech</td><td>Won</td><td>$12,000</td><td>2026-02-10</td></tr>
+      <tr><td>Skyline Ltd</td><td>Pending</td><td>$3,200</td><td>2026-02-18</td></tr>
+      <tr><td>BlueWave</td><td>Lost</td><td>$1,500</td><td>2026-02-12</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>© 2026 CRM Dashboard | Muhammad Shahid</footer>
+
+<script>
+  console.log("Project 11 CRM Dashboard Loaded");
+</script>
+</body>
+</html>

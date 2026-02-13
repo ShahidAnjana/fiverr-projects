@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tool Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* 🔧 Global Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; scroll-behavior:smooth; }
+    body { background:#f9f7f6; color:#2b2b2b; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    button { cursor:pointer; }
+
+    section { padding:80px 20px; }
+
+    /* 🌟 Hero Section */
+    .hero {
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; background:linear-gradient(135deg,#9b5de5,#f15bb5);
+      color:white; padding:120px 20px; position:relative; overflow:hidden; border-radius:0 0 60px 60px;
+    }
+    .hero h1 { font-size:3rem; font-weight:700; margin-bottom:20px; animation:fadeIn 1.2s ease forwards; }
+    .hero p { font-size:1.2rem; font-weight:300; margin-bottom:30px; animation:fadeIn 1.5s ease forwards; }
+    .hero button { padding:15px 30px; background:#ff7f50; border:none; border-radius:50px; color:white; font-weight:600; font-size:1rem; transition:0.3s; animation:fadeIn 1.8s ease forwards; }
+    .hero button:hover { background:#d63447; }
+
+    /* 🛠 Features Section */
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:1200px; margin:0 auto; }
+    .feature-card { background:white; padding:30px; border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.05); text-align:center; transition:0.3s; }
+    .feature-card:hover { transform:translateY(-10px); }
+    .feature-card h3 { font-weight:600; margin-bottom:15px; color:#6a0572; }
+    .feature-card p { font-weight:300; font-size:0.95rem; color:#555; }
+
+    /* 💰 Pricing Section */
+    .pricing { text-align:center; }
+    .pricing h2 { margin-bottom:50px; font-size:2.5rem; font-weight:700; color:#6a0572; }
+    .pricing-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:1100px; margin:0 auto; }
+    .card { background:white; padding:40px 30px; border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.05); transition:0.3s; }
+    .card:hover { transform:translateY(-10px); }
+    .card h3 { font-weight:600; margin-bottom:20px; color:#d63447; }
+    .card p { font-weight:300; margin-bottom:20px; color:#555; }
+    .card span.price { display:block; font-size:2rem; font-weight:700; margin-bottom:20px; color:#ff7f50; }
+    .card button { padding:12px 25px; border:none; border-radius:50px; background:#9b5de5; color:white; font-weight:600; transition:0.3s; }
+    .card button:hover { background:#f15bb5; }
+
+    /* 💬 Testimonials Section */
+    .testimonials { background:#fdf1f5; }
+    .testimonial-card { background:white; padding:30px; border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.05); margin-bottom:20px; }
+    .testimonial-card p { font-style:italic; color:#555; margin-bottom:10px; }
+    .testimonial-card h4 { font-weight:600; color:#6a0572; }
+
+    /* ❓ FAQ Section */
+    .faq { max-width:900px; margin:0 auto; }
+    .faq-item { margin-bottom:20px; border-radius:15px; background:white; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.05); }
+    .faq-item h4 { cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .faq-item p { display:none; margin-top:10px; color:#555; font-weight:300; }
+
+    /* 📢 CTA Section */
+    .cta { text-align:center; background:linear-gradient(135deg,#f15bb5,#ff7f50); color:white; border-radius:30px; padding:80px 20px; margin:40px auto; max-width:1000px; }
+    .cta h2 { font-size:2.5rem; margin-bottom:20px; }
+    .cta button { padding:15px 35px; background:#6a0572; border:none; border-radius:50px; font-size:1rem; font-weight:600; transition:0.3s; }
+    .cta button:hover { background:#d63447; }
+
+    /* 🔁 Animations */
+    @keyframes fadeIn { 0% {opacity:0; transform:translateY(20px);} 100% {opacity:1; transform:translateY(0);} }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size:2rem; }
+      .hero p { font-size:1rem; }
+      .features, .pricing-cards { grid-template-columns:1fr; }
+    }
+
+    /* 📌 Footer */
+.footer {
+  background: #1e1e2f;
+  color: #ccc;
+  padding: 60px 20px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer p,
+.footer a {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 10px;
+  display: block;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #ff4081;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* 🔝 Back To Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #6a11cb;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- 🚀 Hero Section -->
+  <section class="hero">
+    <h1>AI Wizard - Smarter Workflows</h1>
+    <p>Boost productivity with AI-powered automation and intelligent tools.</p>
+    <button>Try AI Wizard</button>
+  </section>
+
+  <!-- 🛠 Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Intelligent Automation</h3>
+      <p>Automate repetitive tasks using smart AI algorithms.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Predictive Analytics</h3>
+      <p>Gain insights from AI-driven predictions for smarter decisions.</p>
+    </div>
+    <div class="feature-card">
+      <h3>AI Integrations</h3>
+      <p>Seamlessly connect AI features with your favorite apps.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Collaboration Tools</h3>
+      <p>Work together efficiently with intelligent suggestions.</p>
+    </div>
+  </section>
+
+  <!-- 💰 Pricing Section -->
+  <section class="pricing">
+    <h2>Choose Your Plan</h2>
+    <div class="pricing-cards">
+      <div class="card">
+        <h3>Basic</h3>
+        <span class="price">$29/mo</span>
+        <p>Essential AI tools for personal use.</p>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Pro</h3>
+        <span class="price">$59/mo</span>
+        <p>Advanced AI features for small teams.</p>
+        <button>Get Started</button>
+      </div>
+      <div class="card">
+        <h3>Enterprise</h3>
+        <span class="price">$119/mo</span>
+        <p>Full-featured AI platform for large organizations.</p>
+        <button>Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonial-card">
+      <p>"AI Wizard completely transformed how we work. Incredible results!"</p>
+      <h4>- Anna P., CEO</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Powerful AI tools with easy integration and automation."</p>
+      <h4>- Mark T., Product Lead</h4>
+    </div>
+  </section>
+
+  <!-- ❓ FAQ Section -->
+  <section class="faq">
+    <div class="faq-item">
+      <h4>What does AI Wizard do? <span>+</span></h4>
+      <p>AI Wizard provides intelligent automation, predictive analytics, and integrations to boost business productivity.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is there a trial version? <span>+</span></h4>
+      <p>Yes, you can try AI Wizard free for 14 days with access to all features.</p>
+    </div>
+  </section>
+
+  <!-- 📢 CTA Section -->
+  <section class="cta">
+    <h2>Ready to supercharge your workflow?</h2>
+    <button>Start Free Trial</button>
+  </section>
+
+  <!-- 📌 Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div>
+      <h3>AI Wizard</h3>
+      <p>Smart AI-powered automation tools to enhance productivity and business growth.</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div>
+      <h3>Support</h3>
+      <a href="#">Help Center</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Email: support@aiwizard.com</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 AI Wizard. All Rights Reserved.
+  </div>
+</footer>
+
+<button id="backToTop">↑</button>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-item h4').forEach(item => {
+      item.addEventListener('click', () => {
+        const p = item.nextElementSibling;
+        p.style.display = p.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Back To Top Functionality
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+backToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+  </script>
+</body>
+</html>

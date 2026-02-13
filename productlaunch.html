@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 8 - Product Launch / Sales Page</title>
+<style>
+  /* 🔧 Global Reset */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Verdana', sans-serif; }
+  body { background:#fef6f0; color:#2a2a2a; line-height:1.6; }
+
+  /* 🌈 Hero Section */
+  .hero {
+    background:#ffedd5;
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  .hero h1 { font-size:3rem; color:#e65100; margin-bottom:15px; }
+  .hero p { font-size:1.2rem; max-width:600px; color:#4e342e; margin-bottom:30px; }
+  .hero button {
+    background:#fb8c00;
+    color:#fff;
+    padding:15px 30px;
+    margin:5px;
+    border:none;
+    border-radius:35px;
+    font-weight:bold;
+    cursor:pointer;
+    transition: all 0.3s ease;
+  }
+  .hero button:hover { background:#ffb74d; transform: translateY(-3px); }
+
+  /* 💎 Features Section */
+  .features {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+    padding:80px 20px;
+    background:#fff3e0;
+  }
+  .feature-card {
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    text-align:center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .feature-card:hover { transform:translateY(-8px); box-shadow:0 15px 40px rgba(0,0,0,0.1); }
+  .feature-card h3 { color:#e65100; margin-bottom:10px; }
+  .feature-card p { font-size:0.95rem; color:#5d4037; }
+
+  /* 🎯 Pricing Section */
+  .pricing {
+    background:#ffe0b2;
+    padding:80px 20px;
+    text-align:center;
+  }
+  .pricing h2 { color:#bf360c; margin-bottom:40px; }
+  .pricing-cards {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+  }
+  .pricing-card {
+    background:#fff;
+    border-radius:20px;
+    padding:30px 20px;
+    width:250px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pricing-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.1); }
+  .pricing-card h3 { color:#e65100; margin-bottom:15px; }
+  .pricing-card p { font-size:0.95rem; margin-bottom:15px; color:#4e342e; }
+  .pricing-card button {
+    background:#fb8c00;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition: all 0.3s ease;
+  }
+  .pricing-card button:hover { background:#ffb74d; }
+
+  /* 📢 Testimonials Section */
+  .testimonials {
+    padding:80px 20px;
+    background:#fff3e0;
+    text-align:center;
+  }
+  .testimonials h2 { color:#e65100; margin-bottom:50px; }
+  .testimonial-card {
+    background:#fff;
+    padding:25px 20px;
+    margin:15px auto;
+    border-radius:15px;
+    max-width:500px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+  }
+  .testimonial-card p { font-style:italic; color:#5d4037; margin-bottom:10px; }
+  .testimonial-card h4 { color:#bf360c; }
+
+  /* 🔹 Footer */
+  .footer {
+    background:#bf360c;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+  }
+  .footer a { color:#ffcc80; text-decoration:underline; }
+
+  /* 🔹 Responsive */
+  @media(max-width:768px){
+    .pricing-cards { flex-direction:column; align-items:center; }
+    .features { grid-template-columns:1fr; }
+    .hero h1 { font-size:2.2rem; }
+  }
+
+  /* 🔝 Back To Top Button - Theme Matched */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #fb8c00;
+  color: #fff;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 10px 25px rgba(230, 81, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #e65100;
+  transform: translateY(-3px);
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Launch Your Next Product!</h1>
+    <p>Discover innovative features and unbeatable pricing for our latest product.</p>
+    <div>
+      <button onclick="document.querySelector('.features').scrollIntoView({behavior:'smooth'})">View Features</button>
+      <button onclick="document.querySelector('.pricing').scrollIntoView({behavior:'smooth'})">Pricing Plans</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Feature One</h3>
+      <p>Powerful and fast performance designed to boost your productivity.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Feature Two</h3>
+      <p>Intuitive design that is easy to use and visually appealing.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Feature Three</h3>
+      <p>Seamless integration with popular tools and platforms.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <h2>Choose Your Plan</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p>$19/month</p>
+        <p>Includes essential features to get started.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Pro</h3>
+        <p>$49/month</p>
+        <p>Advanced features for growing businesses.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p>$99/month</p>
+        <p>Full features for large-scale operations.</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-card">
+      <p>"Amazing product! Our sales increased within days of using it."</p>
+      <h4>- Alex M.</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Intuitive, fast, and reliable. Highly recommend to startups."</p>
+      <h4>- Sarah L.</h4>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Product Launch Page | Muhammad Shahid</p>
+    <p><a href="https://www.fiverr.com/shahidthedev" target="_blank">Hire Me on Fiverr</a></p>
+  </footer>
+
+
+  <button id="backToTop">↑</button>
+
+  <!-- JS -->
+  <script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulting Firm Website</title>
+  <meta name="description" content="Professional Consulting Firm website. Modern, unique layout with interactive sections.">
+
+  <style>
+    /* 🔧 Global Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    body { background: #fdf6f0; color: #333; line-height: 1.6; }
+
+    /* 🌟 Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #00b4d8, #90e0ef);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; text-shadow: 2px 2px rgba(0,0,0,0.2); }
+    .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
+
+    .hero .buttons a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 12px 30px;
+      background: #ffb703;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero .buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* 🔹 Services Section */
+    .services {
+      padding: 80px 20px;
+      background: #fff4f0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .service-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .service-card h3 { margin-bottom: 15px; color: #0077b6; }
+    .service-card p { font-size: 0.95rem; color: #555; }
+
+    /* 🔹 About Section */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 80px 20px;
+      background: #f0f8ff;
+    }
+    .about img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      margin-right: 40px;
+      flex: 1 1 400px;
+    }
+    .about .text {
+      flex: 1 1 400px;
+    }
+    .about .text h2 { font-size: 2rem; margin-bottom: 20px; color: #023e8a; }
+    .about .text p { font-size: 1rem; color: #333; }
+
+    /* 🔹 Contact Form Section */
+    .contact {
+      padding: 80px 20px;
+      background: #fffaf0;
+      display: flex;
+      justify-content: center;
+    }
+    .contact form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 500px;
+      width: 100%;
+    }
+    .contact form h3 { margin-bottom: 20px; color: #fb8500; }
+    .contact form input, .contact form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+    .contact form button {
+      background: #fb8500;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .contact form button:hover { background: #ffb703; }
+
+    /* 🔹 Footer */
+    .footer {
+      background: #023e8a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .footer a { color: #ffd166; text-decoration: underline; }
+
+    /* 🔹 Responsive */
+    @media(max-width: 768px){
+      .about { flex-direction: column; }
+      .about img { margin-right: 0; margin-bottom: 30px; }
+      .services { grid-template-columns: 1fr; }
+    }
+
+    /* Back To Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #023e8a;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #0077b6;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Consulting Firm Solutions</h1>
+    <p>We provide expert consulting services to help businesses scale, innovate, and succeed in a competitive market.</p>
+    <div class="buttons">
+      <a href="#services">Our Services</a>
+      <a href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="service-card">
+      <h3>Business Strategy</h3>
+      <p>Customized strategies for growth and operational efficiency tailored to your business.</p>
+    </div>
+    <div class="service-card">
+      <h3>Market Analysis</h3>
+      <p>Deep insights into your industry and competitors to stay ahead of the curve.</p>
+    </div>
+    <div class="service-card">
+      <h3>Financial Consulting</h3>
+      <p>Expert financial planning and analysis to optimize your resources and profits.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <img src="consulting-office.jpg" alt="Consulting Office">
+    <div class="text">
+      <h2>About Our Firm</h2>
+      <p>With years of experience, our consulting firm has delivered measurable results for clients across industries. We focus on innovation, efficiency, and sustainable growth.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <form>
+      <h3>Contact Us</h3>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Consulting Firm Website | Muhammad Shahid</p>
+    <p><a href="https://www.fiverr.com/shahidthedev" target="_blank" rel="noopener noreferrer">Hire Me on Fiverr</a></p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
+  <!-- JS -->
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('.buttons a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Back To Top Functionality
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+backToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+  </script>
+  
+</body>
+</html>

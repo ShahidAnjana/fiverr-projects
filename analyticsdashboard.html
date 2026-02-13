@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 10 - Analytics Dashboard</title>
+<style>
+  body { margin:0; font-family:'Tahoma', sans-serif; background:#e8f0fe; color:#1a1a1a; }
+  header { background:#0d47a1; color:#fff; text-align:center; padding:25px; font-size:1.6rem; }
+  .summary { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; padding:40px 20px; }
+  .summary-card { background:#fff; border-radius:12px; width:220px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.1); text-align:center; }
+  .summary-card h3 { color:#0d47a1; margin-bottom:10px; }
+  .summary-card p { color:#333; font-size:0.95rem; }
+
+  .analytics { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:40px; }
+  .chart-box { background:#fff; width:320px; height:200px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#0d47a1; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+
+  footer { text-align:center; padding:30px 20px; background:#0d47a1; color:#fff; margin-top:50px; }
+</style>
+</head>
+<body>
+
+<header>Analytics Dashboard</header>
+
+<section class="summary">
+  <div class="summary-card"><h3>Visitors</h3><p>12,345 Unique Visits</p></div>
+  <div class="summary-card"><h3>Sales</h3><p>4,321 Orders</p></div>
+  <div class="summary-card"><h3>Revenue</h3><p>$34,560</p></div>
+  <div class="summary-card"><h3>Conversion</h3><p>8.5%</p></div>
+</section>
+
+<section class="analytics">
+  <div class="chart-box">Traffic Chart</div>
+  <div class="chart-box">Sales Chart</div>
+  <div class="chart-box">Revenue Chart</div>
+</section>
+
+<footer>© 2026 Analytics Dashboard | Muhammad Shahid</footer>
+
+<script>
+  console.log("Project 10 Analytics Loaded");
+</script>
+</body>
+</html>

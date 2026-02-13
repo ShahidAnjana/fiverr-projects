@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Event / Conference Website</title>
+  <meta name="description" content="Professional Corporate Event and Conference website with modern layout and interactive features.">
+
+  <style>
+    /* 🔧 Global Reset */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
+    body { background: #fefefe; color: #333; line-height:1.6; }
+
+    /* 🌟 Hero Section */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      overflow:hidden;
+    }
+    .hero h1 {
+      font-size:3rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size:1.2rem;
+      max-width:600px;
+      margin-bottom:30px;
+    }
+    .hero button {
+      padding:12px 28px;
+      margin:5px;
+      border:none;
+      border-radius:25px;
+      background:#3b82f6;
+      color:#fff;
+      font-weight:bold;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .hero button:hover {
+      background:#60a5fa;
+      transform: translateY(-4px);
+    }
+
+    /* 🎤 Speakers Section */
+    .speakers {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:30px;
+      padding:80px 20px;
+      background:#f0f4ff;
+    }
+    .speaker-card {
+      background:#fff;
+      border-radius:20px;
+      padding:20px;
+      width:250px;
+      text-align:center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .speaker-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .speaker-card img {
+      width:100%;
+      border-radius:50%;
+      margin-bottom:15px;
+    }
+    .speaker-card h4 { color:#1e3a8a; margin-bottom:5px; }
+    .speaker-card p { font-size:0.9rem; color:#555; }
+
+    /* 🗓️ Schedule Section */
+    .schedule {
+      background:#fff;
+      padding:80px 20px;
+    }
+    .schedule h2 { text-align:center; margin-bottom:50px; color:#1e3a8a; }
+    .schedule-item {
+      display:flex;
+      justify-content:space-between;
+      padding:15px 20px;
+      margin-bottom:15px;
+      border-left:5px solid #3b82f6;
+      background:#f9f9f9;
+      border-radius:12px;
+      transition: transform 0.3s ease;
+    }
+    .schedule-item:hover { transform: translateX(5px); }
+    .schedule-item h4 { margin-bottom:5px; }
+    .schedule-item span { font-size:0.9rem; color:#555; }
+
+    /* 📞 Registration Section */
+    .registration {
+      background: #0f172a;
+      color:#fff;
+      text-align:center;
+      padding:80px 20px;
+    }
+    .registration form {
+      max-width:500px;
+      margin:0 auto;
+      background:#1e3a8a;
+      padding:40px;
+      border-radius:25px;
+    }
+    .registration form input, .registration form textarea {
+      width:100%;
+      padding:12px 15px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:12px;
+      font-size:1rem;
+    }
+    .registration form button {
+      background:#3b82f6;
+      border:none;
+      padding:12px 30px;
+      border-radius:50px;
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .registration form button:hover {
+      background:#60a5fa;
+    }
+
+    /* 🔹 Footer */
+    .footer {
+      background:#1e1b4b;
+      color:#fff;
+      text-align:center;
+      padding:40px 20px;
+    }
+    .footer a { color:#3b82f6; text-decoration:underline; }
+
+    /* 🔹 Responsive */
+    @media(max-width:768px){
+      .speakers { flex-direction: column; align-items:center; }
+      .hero h1 { font-size:2.2rem; }
+    }
+
+    /* Back To Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1e1b4b;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #3b82f6;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Global Tech Conference 2026</h1>
+    <p>Join industry leaders and innovators at the most anticipated tech event of the year.</p>
+    <div>
+      <button onclick="document.getElementById('speakers').scrollIntoView({behavior:'smooth'})">Meet Speakers</button>
+      <button onclick="document.getElementById('registration').scrollIntoView({behavior:'smooth'})">Register Now</button>
+    </div>
+  </section>
+
+  <!-- Speakers -->
+  <section class="speakers" id="speakers">
+    <div class="speaker-card">
+      <img src="speaker1.jpg" alt="Speaker 1">
+      <h4>Jane Doe</h4>
+      <p>CEO, Tech Innovators</p>
+    </div>
+    <div class="speaker-card">
+      <img src="speaker2.jpg" alt="Speaker 2">
+      <h4>John Smith</h4>
+      <p>CTO, NextGen Software</p>
+    </div>
+    <div class="speaker-card">
+      <img src="speaker3.jpg" alt="Speaker 3">
+      <h4>Mary Johnson</h4>
+      <p>AI Researcher</p>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section class="schedule">
+    <h2>Event Schedule</h2>
+    <div class="schedule-item">
+      <div>
+        <h4>Opening Keynote</h4>
+        <span>9:00 AM - 10:00 AM</span>
+      </div>
+      <div>Auditorium A</div>
+    </div>
+    <div class="schedule-item">
+      <div>
+        <h4>AI Panel Discussion</h4>
+        <span>10:15 AM - 11:45 AM</span>
+      </div>
+      <div>Conference Room B</div>
+    </div>
+    <div class="schedule-item">
+      <div>
+        <h4>Networking Break</h4>
+        <span>12:00 PM - 12:45 PM</span>
+      </div>
+      <div>Lounge Area</div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section class="registration" id="registration">
+    <h2>Register for the Event</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Your Message / Queries" rows="4" required></textarea>
+      <button type="submit">Submit Registration</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Global Tech Conference | Muhammad Shahid</p>
+    <p><a href="https://www.fiverr.com/shahidthedev" target="_blank" rel="noopener noreferrer">Hire Me on Fiverr</a></p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
+  <!-- JS -->
+  <script>
+    // Hero button smooth scroll
+    document.querySelectorAll('.hero button').forEach(btn=>{
+      btn.addEventListener('click', function(){
+        const target = this.textContent.includes('Speakers') ? 'speakers' : 'registration';
+        document.getElementById(target).scrollIntoView({ behavior:'smooth' });
+      });
+    });
+
+    // Back To Top Functionality
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+backToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+  </script>
+</body>
+</html>
